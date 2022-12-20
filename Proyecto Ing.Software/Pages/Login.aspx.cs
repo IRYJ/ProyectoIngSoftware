@@ -46,6 +46,10 @@ namespace Proyecto_Ing.Software.Pages
 
                         Response.Redirect("~/Default.aspx");
                     }
+                    else
+                    {
+                        Response.Write("<script>alert('Ese fue un correo electrónico o contraseña no válidos. ¡Vuelve a intentarlo!')</script>");
+                    }
                 }
 
             }
