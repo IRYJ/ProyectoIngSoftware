@@ -17,15 +17,23 @@ namespace Proyecto_Ing.Software.Pages
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if (txtNacimiento.Text != "" && txtNumero.Text != "" && txtCorreo.Text != "" && txtPais.Text != "" && txtCiudad.Text != "" && txtPostal.Text != "" && txtDireccion.Text != "" && txtUsuario.Text != "" && txtClave.Text != "")
             {
-                using (ProyectoIngSoftwareEntities1 db = new ProyectoIngSoftwareEntities1())
+                if (Page.IsValid)
                 {
-                    var user = db.spCrearUsuario(txtNombre.Text,DateTime.Parse(txtNacimiento.Text),txtNumero.Text,txtCorreo.Text,txtPais.Text,txtCiudad.Text,txtPostal.Text,txtDireccion.Text,txtUsuario.Text,txtClave.Text,"0");
-                    
-                    Response.Redirect("~/Pages/Login.aspx");
+                    using (ProyectoIngSoftwareEntities1 db = new ProyectoIngSoftwareEntities1())
+                    {
+                        var user = db.spCrearUsuario(txtNombre.Text, DateTime.Parse(txtNacimiento.Text), txtNumero.Text, txtCorreo.Text, txtPais.Text, txtCiudad.Text, txtPostal.Text, txtDireccion.Text, txtUsuario.Text, txtClave.Text, "0");
+
+                        Response.Redirect("~/Pages/Login.aspx");
+                    }
                 }
             }
+            else
+            {
+                Response.Redirect("~/Pages/Registro.aspx");
+            }
+            
         }
     }
 }
