@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProyectoIngSoftwareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProyectoIngSoftwareEntities1" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="spCrearUsuario">
+      <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="fechaNacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="numeroTelefono" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="pais" Mode="In" Type="String" />
+      <Parameter Name="ciudad" Mode="In" Type="String" />
+      <Parameter Name="codigoPostal" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+      <Parameter Name="empleado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spLogin" ReturnType="Collection(ProyectoIngSoftwareModel.spLogin_Result)">
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spFeedback">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="Comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spEditarClave">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spEditarPerfil">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+      <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="numeroTelefono" Mode="In" Type="String" />
+      <Parameter Name="pais" Mode="In" Type="String" />
+      <Parameter Name="ciudad" Mode="In" Type="String" />
+      <Parameter Name="codigoPostal" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spConsultarUsuarios" ReturnType="Collection(ProyectoIngSoftwareModel.spConsultarUsuarios_Result)" />
+    <FunctionImport Name="spConsultarAdmin" ReturnType="Collection(ProyectoIngSoftwareModel.spConsultarAdmin_Result)">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spActivarUsuario">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spInactivarUsuario">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spSuspenderUsuario">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spEditarAdmin">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+      <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="fechaNacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="numeroTelefono" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="pais" Mode="In" Type="String" />
+      <Parameter Name="ciudad" Mode="In" Type="String" />
+      <Parameter Name="codigoPostal" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sspEliminarUsuario">
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spLogin_Result">
+    <Property Type="Int32" Name="idPersona" Nullable="false" />
+    <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="fechaNacimiento" Nullable="true" />
+    <Property Type="String" Name="numeroTelefono" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="pais" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ciudad" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="codigoPostal" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="direccion" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="usuario" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="clave" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="empleado" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="spConsultarUsuarios_Result">
+    <Property Type="Int32" Name="idPersona" Nullable="false" />
+    <Property Type="String" Name="usuario" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="empleado" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="spConsultarAdmin_Result">
+    <Property Type="Int32" Name="idPersona" Nullable="false" />
+    <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="fechaNacimiento" Nullable="true" />
+    <Property Type="String" Name="numeroTelefono" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="pais" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ciudad" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="codigoPostal" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="direccion" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="usuario" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="clave" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="estado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="empleado" Nullable="true" MaxLength="1" />
+  </ComplexType>
+</Schema>

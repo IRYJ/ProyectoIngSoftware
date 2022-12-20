@@ -1,0 +1,124 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Proyecto_Ing.Software.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%: Page.Title %> - Tic-Icon</title>
+    <link href="/CSS/Style.css" rel="stylesheet" />
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        .iconos{
+            margin-right: 5%;
+        }
+        
+
+    </style>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="/Images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <%-----------NAV BAR-----------%>
+        <header>
+            <div class="collapse bg-light" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-7 py-4">
+                            <h4 class="text-black">Quienes somos</h4>
+                            <p class="text-muted">Somos un pequeño grupo de programadores de la universidad castro carazo, nos reunimos con el objetivo de crear una plataforma de acceso gratuito con el fin de ofrecer iconos sin copyright a cualquier proyecto de indole informatico.</p>
+                        </div>
+                        <div class="col-sm-4 offset-md-1 py-4">
+                            <h4 class="text-black">Perfil</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <asp:LinkButton ID="lbtnPerfil" class="text-black" runat="server" OnClick="lbtnPerfil_Click">Modificar perfil</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="lbtnIconos" class="text-black" runat="server" OnClick="lbtnIconos_Click">Mis iconos</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="lbtnCerrarSesion" class="text-black" runat="server" OnClick="lbtnCerrarSesion_Click">Cerrar sesion</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="lbtnIniciarSesion" class="text-black" runat="server" OnClick="lbtnIniciarSesion_Click">Iniciar Sesion</asp:LinkButton></li>
+                            </ul>
+                            <h4 class="text-black">Adicional</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="/Pages/FAQ.aspx" class="text-black">Preguntas frecuentes</a></li>
+                                <li><a href="/Pages/Feedback.aspx" class="text-black">Contacto</a></li>
+                                <li>
+                                    <asp:LinkButton ID="lbtnAdmin" class="text-black" runat="server" OnClick="lbtnAdmin_Click">Control administrativo</asp:LinkButton></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark shadow-sm justify-content-center">
+                <div class="container">
+                    <a href="#" class="navbar-brand d-flex align-items-left">
+                        <asp:Image runat="server" Width="120" Height="120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false" ImageUrl="~/Images/logo alter.png"></asp:Image>
+                        <div class="iconos"><strong><asp:LinkButton ID="lbtnIcons" class="text-white" runat="server" OnClick="lbtnIcons_Click" margin="100">Iconos</asp:LinkButton></strong></div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <br />
+                <p>&copy; <%: DateTime.Now.Year %> - Tic-Icon</p>
+            </footer>
+        </div>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+</body>
+</html>

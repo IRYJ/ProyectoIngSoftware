@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProyectoIngSoftwareModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="spActivarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spConsultarAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spConsultarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spCrearUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
+          <Parameter Name="fechaNacimiento" Type="date" Mode="In" />
+          <Parameter Name="numeroTelefono" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="pais" Type="varchar" Mode="In" />
+          <Parameter Name="ciudad" Type="varchar" Mode="In" />
+          <Parameter Name="codigoPostal" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="clave" Type="varchar" Mode="In" />
+          <Parameter Name="empleado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEditarAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+          <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
+          <Parameter Name="fechaNacimiento" Type="date" Mode="In" />
+          <Parameter Name="numeroTelefono" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="pais" Type="varchar" Mode="In" />
+          <Parameter Name="ciudad" Type="varchar" Mode="In" />
+          <Parameter Name="codigoPostal" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+          <Parameter Name="clave" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEditarClave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+          <Parameter Name="clave" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEditarPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+          <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
+          <Parameter Name="numeroTelefono" Type="varchar" Mode="In" />
+          <Parameter Name="pais" Type="varchar" Mode="In" />
+          <Parameter Name="ciudad" Type="varchar" Mode="In" />
+          <Parameter Name="codigoPostal" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spFeedback" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="Comentario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spInactivarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="clave" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spSuspenderUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sspEliminarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPersona" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="ProyectoIngSoftwareModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProyectoIngSoftwareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ProyectoIngSoftwareEntities1" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="spCrearUsuario">
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="fechaNacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="numeroTelefono" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="pais" Mode="In" Type="String" />
+            <Parameter Name="ciudad" Mode="In" Type="String" />
+            <Parameter Name="codigoPostal" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="clave" Mode="In" Type="String" />
+            <Parameter Name="empleado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spLogin" ReturnType="Collection(ProyectoIngSoftwareModel.spLogin_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="clave" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spFeedback">
+            <Parameter Name="idPersona" Mode="In" Type="Int32" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="Comentario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEditarClave">
+            <Parameter Name="idPersona" Mode="In" Type="Int32" />
+            <Parameter Name="clave" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEditarPerfil">
+            <Parameter Name="idPersona" Mode="In" Type="Int32" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="numeroTelefono" Mode="In" Type="String" />
+            <Parameter Name="pais" Mode="In" Type="String" />
+            <Parameter Name="ciudad" Mode="In" Type="String" />
+            <Parameter Name="codigoPostal" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarUsuarios" ReturnType="Collection(ProyectoIngSoftwareModel.spConsultarUsuarios_Result)" />
+          <FunctionImport Name="spConsultarAdmin" ReturnType="Collection(ProyectoIngSoftwareModel.spConsultarAdmin_Result)">
+          <Parameter Name="idPersona" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spActivarUsuario">
+          <Parameter Name="idPersona" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spInactivarUsuario">
+          <Parameter Name="idPersona" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spSuspenderUsuario">
+          <Parameter Name="idPersona" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEditarAdmin">
+            <Parameter Name="idPersona" Mode="In" Type="Int32" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="fechaNacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="numeroTelefono" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="pais" Mode="In" Type="String" />
+            <Parameter Name="ciudad" Mode="In" Type="String" />
+            <Parameter Name="codigoPostal" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="clave" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sspEliminarUsuario">
+          <Parameter Name="idPersona" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spLogin_Result">
+          <Property Type="Int32" Name="idPersona" Nullable="false" />
+          <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fechaNacimiento" Nullable="true" />
+          <Property Type="String" Name="numeroTelefono" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="pais" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ciudad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="codigoPostal" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="direccion" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="usuario" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="clave" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="estado" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="empleado" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="spConsultarUsuarios_Result">
+          <Property Type="Int32" Name="idPersona" Nullable="false" />
+          <Property Type="String" Name="usuario" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="empleado" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="spConsultarAdmin_Result">
+          <Property Type="Int32" Name="idPersona" Nullable="false" />
+          <Property Type="String" Name="nombreCompleto" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fechaNacimiento" Nullable="true" />
+          <Property Type="String" Name="numeroTelefono" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="pais" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ciudad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="codigoPostal" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="direccion" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="usuario" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="clave" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="estado" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="empleado" Nullable="true" MaxLength="1" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProyectoIngSoftwareModelStoreContainer" CdmEntityContainer="ProyectoIngSoftwareEntities1" >
+          <FunctionImportMapping FunctionImportName="spCrearUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spCrearUsuario" />
+          <FunctionImportMapping FunctionImportName="spLogin" FunctionName="ProyectoIngSoftwareModel.Store.spLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoIngSoftwareModel.spLogin_Result">
+                <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+                <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="numeroTelefono" ColumnName="numeroTelefono" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="empleado" ColumnName="empleado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spFeedback" FunctionName="ProyectoIngSoftwareModel.Store.spFeedback" />
+          <FunctionImportMapping FunctionImportName="spEditarClave" FunctionName="ProyectoIngSoftwareModel.Store.spEditarClave" />
+          <FunctionImportMapping FunctionImportName="spEditarPerfil" FunctionName="ProyectoIngSoftwareModel.Store.spEditarPerfil" />
+          <FunctionImportMapping FunctionImportName="spConsultarUsuarios" FunctionName="ProyectoIngSoftwareModel.Store.spConsultarUsuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoIngSoftwareModel.spConsultarUsuarios_Result">
+                <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="empleado" ColumnName="empleado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarAdmin" FunctionName="ProyectoIngSoftwareModel.Store.spConsultarAdmin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoIngSoftwareModel.spConsultarAdmin_Result">
+                <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+                <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="numeroTelefono" ColumnName="numeroTelefono" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="empleado" ColumnName="empleado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spActivarUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spActivarUsuario" />
+          <FunctionImportMapping FunctionImportName="spInactivarUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spInactivarUsuario" />
+          <FunctionImportMapping FunctionImportName="spSuspenderUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spSuspenderUsuario" />
+          <FunctionImportMapping FunctionImportName="spEditarAdmin" FunctionName="ProyectoIngSoftwareModel.Store.spEditarAdmin" />
+          <FunctionImportMapping FunctionImportName="sspEliminarUsuario" FunctionName="ProyectoIngSoftwareModel.Store.sspEliminarUsuario" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

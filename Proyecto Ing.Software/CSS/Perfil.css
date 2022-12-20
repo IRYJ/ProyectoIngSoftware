@@ -1,0 +1,36 @@
+﻿body {
+    background-color: #074f57;
+    background-image: url('../Images/Backgrounds/pexels-artem-makarov-14177817.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.card {
+    background: rgba(0, 0, 0, 0);
+    width: 200vh;
+    align-items: center;
+}
+
+.card-body {
+    background: rgba(0, 0, 0, .1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
+    color: white;
+}
+.footerlinks {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+    .footerlinks:hover {
+        color: #ffd800;
+    }
+
+#footer1 {
+    background: #762b00;
+}
+
+#footer2 {
+    background: #531f00;
+}

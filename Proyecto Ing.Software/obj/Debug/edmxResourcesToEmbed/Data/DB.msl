@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoIngSoftwareModelStoreContainer" CdmEntityContainer="ProyectoIngSoftwareEntities1">
+    <FunctionImportMapping FunctionImportName="spCrearUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spCrearUsuario" />
+    <FunctionImportMapping FunctionImportName="spLogin" FunctionName="ProyectoIngSoftwareModel.Store.spLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoIngSoftwareModel.spLogin_Result">
+          <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="numeroTelefono" ColumnName="numeroTelefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="empleado" ColumnName="empleado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spFeedback" FunctionName="ProyectoIngSoftwareModel.Store.spFeedback" />
+    <FunctionImportMapping FunctionImportName="spEditarClave" FunctionName="ProyectoIngSoftwareModel.Store.spEditarClave" />
+    <FunctionImportMapping FunctionImportName="spEditarPerfil" FunctionName="ProyectoIngSoftwareModel.Store.spEditarPerfil" />
+    <FunctionImportMapping FunctionImportName="spConsultarUsuarios" FunctionName="ProyectoIngSoftwareModel.Store.spConsultarUsuarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoIngSoftwareModel.spConsultarUsuarios_Result">
+          <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="empleado" ColumnName="empleado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spConsultarAdmin" FunctionName="ProyectoIngSoftwareModel.Store.spConsultarAdmin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoIngSoftwareModel.spConsultarAdmin_Result">
+          <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="numeroTelefono" ColumnName="numeroTelefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="empleado" ColumnName="empleado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spActivarUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spActivarUsuario" />
+    <FunctionImportMapping FunctionImportName="spInactivarUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spInactivarUsuario" />
+    <FunctionImportMapping FunctionImportName="spSuspenderUsuario" FunctionName="ProyectoIngSoftwareModel.Store.spSuspenderUsuario" />
+    <FunctionImportMapping FunctionImportName="spEditarAdmin" FunctionName="ProyectoIngSoftwareModel.Store.spEditarAdmin" />
+    <FunctionImportMapping FunctionImportName="sspEliminarUsuario" FunctionName="ProyectoIngSoftwareModel.Store.sspEliminarUsuario" />
+  </EntityContainerMapping>
+</Mapping>
